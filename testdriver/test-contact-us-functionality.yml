@@ -1,0 +1,47 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Contact"
+    commands:
+      - command: hover-text
+        text: Contact
+        description: link in the header
+        action: click
+  - prompt: Click on "Contact"
+    commands:
+      - command: scroll-until-text
+        text: Contact
+        direction: down
+      - command: hover-text
+        text: Contact
+        description: link in the header
+        action: click
+  - prompt: Assert that a contact method/form is displayed
+    commands:
+      - command: assert
+        expect: the contact form is displayed
+  - prompt: Fill out the contact form or start chat
+    commands:
+      - command: hover-text
+        text: Name
+        description: name field in the contact form
+        action: click
+      - command: type
+        text: John Doe
+      - command: hover-text
+        text: Email
+        description: email field in the contact form
+        action: click
+      - command: type
+        text: johndoe@example.com
+      - command: hover-text
+        text: Message
+        description: message field in the contact form
+        action: click
+      - command: type
+        text: Hello, I have a question about your services.
+  - prompt: >-
+      Assert that a confirmation message or response is displayed  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: a confirmation message is displayed
