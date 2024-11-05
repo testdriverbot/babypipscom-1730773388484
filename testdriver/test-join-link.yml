@@ -1,0 +1,32 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Join"
+    commands:
+      - command: hover-text
+        text: Join
+        description: link in the header
+        action: click
+  - prompt: Assert that a registration form displays
+    commands:
+      - command: assert
+        expect: the registration form with an Email field is visible
+  - prompt: Complete the registration form
+    commands:
+      - command: hover-text
+        text: Email
+        description: email input field
+        action: click
+      - command: type
+        text: test@example.com
+      - command: hover-text
+        text: Password
+        description: password input field
+        action: click
+      - command: type
+        text: TestPassword123
+  - prompt: >-
+      Assert that a welcome message or confirmation page is shown  # Use the
+      content of the file from the environment
+    commands:
+      - command: assert
+        expect: a welcome message or confirmation page is visible
