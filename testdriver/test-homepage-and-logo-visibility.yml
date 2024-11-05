@@ -1,0 +1,19 @@
+version: 4.0.80
+steps:
+  - prompt: Assert that the homepage loads
+    commands:
+      - command: assert
+        expect: the text "New to forex?" is visible on the homepage
+  - prompt: Assert that the homepage loads
+    commands:
+      - command: scroll-until-text
+        text: New to forex?
+        direction: down
+      - command: assert
+        expect: the text "New to forex?" is visible on the homepage
+  - prompt: >-
+      Assert that the logo is visible  # Use the content of the file from the
+      environment
+    commands:
+      - command: assert
+        expect: the text "babypips" is visible on the homepage
