@@ -1,0 +1,20 @@
+version: 4.0.80
+steps:
+  - prompt: Click the search icon
+    commands:
+      - command: hover-image
+        description: search icon in the webpage content
+        action: click
+  - prompt: Click the search icon
+    commands:
+      - command: hover-text
+        text: Search
+        description: search icon in the header
+        action: click
+  - prompt: Click the search icon
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-image
+        description: search icon in the top navigation bar
+        action: click
