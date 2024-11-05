@@ -1,0 +1,14 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Start Learning"
+    commands:
+      - command: hover-text
+        text: Start Learning
+        description: button to begin learning forex
+        action: click
+  - prompt: >-
+      Assert that a learning page or resource opens  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: the School of Pipsology page is open
