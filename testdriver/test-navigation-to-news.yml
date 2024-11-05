@@ -1,0 +1,14 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "News"
+    commands:
+      - command: hover-text
+        text: News
+        description: link in the header
+        action: click
+  - prompt: >-
+      Assert that the news page loads successfully  # Use the content of the
+      file from the environment
+    commands:
+      - command: assert
+        expect: Market News is visible on the page
