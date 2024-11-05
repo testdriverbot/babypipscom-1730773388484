@@ -1,0 +1,10 @@
+version: 4.0.80
+steps:
+  - prompt: Click on "Learn Forex"
+    commands:
+      - command: hover-text
+        text: Learn Forex
+        description: link in the navigation bar
+        action: click
+      - command: assert
+        expect: The School of Pipsology is visible
